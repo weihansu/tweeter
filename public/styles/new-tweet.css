@@ -1,0 +1,29 @@
+.new-tweet {
+  background-color: #f2f2f2;
+  border: 1px solid grey;
+  border-radius: 6px;
+  height: 190px;
+  padding: 0 0.5em;
+}
+
+.tweet-heading {
+  text-align: left;
+  border-bottom: 2px black solid;
+}
+
+.tweet-form-text {
+  display: block;
+  width: 100%;
+  margin: 0.45em 0;
+  padding: 0.4em;
+  /*margin: center;*/
+}
+
+.tweet-form-input {
+  float: left;
+
+}
+
+.counter {
+  float: right;
+}

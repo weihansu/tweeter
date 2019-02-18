@@ -1,11 +1,11 @@
 #nav-bar {
-  position: fixed;
+  position: relative;
   background: #00a087;
   width: 100%;
   height: 80px;
   color: #e8fdff;
   padding: 0 2em;
-  /*overflow: hidden;*/
+  overflow: hidden;
   /* overflow is used here */
 }
 

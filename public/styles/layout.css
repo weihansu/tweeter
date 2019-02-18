@@ -18,6 +18,9 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  /*text-align: center;*/
+  /*align-content: center;*/
+  display: inline;
 }
 
 /*
@@ -27,4 +30,14 @@ body {
 /* Define default Font to 'Roboto Condesed' */
 * {
  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container {
+  background-color: #fff;
+  width: 450px;
+  height: 300px;
+  padding: 2em;
+  overflow: auto;
+  text-align: center;
+  margin: auto;
 }
