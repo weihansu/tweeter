@@ -23,3 +23,8 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+/* Define default Font to 'Roboto Condesed' */
+* {
+ font-family: 'Roboto Condensed', sans-serif;
+}
