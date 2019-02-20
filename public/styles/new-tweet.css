@@ -2,8 +2,9 @@
   background-color: #f2f2f2;
   border: 1px solid grey;
   border-radius: 6px;
-  height: 190px;
+  height: 170px;
   padding: 0 0.5em;
+  margin: 10px 0;
 }
 
 .tweet-heading {
@@ -26,4 +27,68 @@
 
 .counter {
   float: right;
+}
+
+.tweeted {
+  background-color: #fff;
+  border: 1px solid grey;
+  border-radius: 6px;
+  height: 170px;
+  /*padding: 0 0.5em;*/
+  margin: 10px 0;
+}
+
+.tweeted-head {
+  height: 70px;
+  width: 100%;
+  padding: 0.5em;
+  background-color: #f3f3f3;
+  border-radius: 6px;
+}
+
+.tweeted-heading-right {
+  float: right;
+}
+.tweeted-heading{
+  display: inline;
+  float: left;
+  margin: auto;
+}
+
+.profile-photo {
+  border-radius: 6px;
+  height: 50px;
+  width: 50px;
+  margin-right: 5px;
+}
+
+.tweeted {
+  opacity: 0.75;
+}
+
+.tweeted-article {
+  height: 70px;
+  border-bottom: 1px solid grey;
+}
+
+.tweeted-article > p {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  padding: 0.5em;
+}
+
+.tweeted-footer {
+  margin: auto;
+
+}
+.tweeted-footer > span {
+  font-size: 0.75em;
+  float: left;
+  padding: 0.5em;
 }
