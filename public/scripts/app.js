@@ -85,4 +85,15 @@ function createTweetElement(elm) {
 $(document).ready(function() {
   renderTweets(datas);
 
+  $( ".tweet-form" ).submit(function( event ) {
+  event.preventDefault();
+  // console.log($(this).serialize());
+  let tweet = $(this).serialize()
+  $.post( "/tweets", tweet, function( data ) {
+    alert("Data: " + tweet);
+  });
+
+
+});
+
 })
