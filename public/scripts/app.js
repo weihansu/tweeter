@@ -82,18 +82,28 @@ function createTweetElement(elm) {
   return tweet;
 }
 
+function loadTweets() {
+  const result = []
+  const $form = $('.tweet-form');
+  $form.submit(function(){
+    $.ajax('/tweets', {method: 'GET', dataType: 'json'})
+    .then(function(res) {
+      renderTweets(res)
+    })
+
+  })
+}
+
+
 $(document).ready(function() {
+  loadTweets()
   renderTweets(datas);
 
   $( ".tweet-form" ).submit(function( event ) {
-  event.preventDefault();
-  // console.log($(this).serialize());
-  let tweet = $(this).serialize()
-  $.post( "/tweets", tweet, function( data ) {
-    alert("Data: " + tweet);
+    event.preventDefault();
+    let tweet = $(this).serialize()
+    $.post( "/tweets", tweet, function( data ) {
+      renderTweets(datas);
+    });
   });
-
-
-});
-
 })
