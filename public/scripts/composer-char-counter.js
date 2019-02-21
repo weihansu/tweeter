@@ -41,10 +41,10 @@ $(document).ready(function() {
   $('.button-compose').click(function(){
     if($(this).attr('data-click-state') == 1) {
       $(this).attr('data-click-state', 0)
-      $('.new-tweet').css({'opacity': 1, 'display': 'block'})
+      $('.new-tweet').css({'display': 'none', 'transition': 'opacity 1s ease-out', 'opacity': 0})
       } else {
       $(this).attr('data-click-state', 1)
-      $('.new-tweet').css({'display': 'none', 'transition': 'opacity 1s ease-out', 'opacity': 0})
+      $('.new-tweet').css({'opacity': 1, 'display': 'block'})
   }
   });
 });
