@@ -126,15 +126,21 @@ $(document).ready(function() {
     let tweet = $(this).serialize()
     let val = tweet.split('=').slice(1).join('');
     if (val.length <= 140 && val) {
+      $('.tweet-error').css('opacity', 0)
       $.post( "/tweets", tweet, function( data ) {
         loadTweets()
         // renderTweets(data);
         // console.log(data)
       });
     } else if (val.length > 140) {
-      alert('Your tweets has more than 140 characters!')
+      // alert('Your tweets has more than 140 characters!')
+      $('.tweet-error').text('Your tweets has more than 140 characters!')
+      $('.tweet-error').css('opacity', 1)
+
     } else {
-      alert('Enter a valid tweet')
+      // alert('Enter a valid tweet')
+      $('.tweet-error').text('Enter a valid tweet')
+      $('.tweet-error').css('opacity', 1)
     }
 
   });

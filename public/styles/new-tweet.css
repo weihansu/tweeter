@@ -55,6 +55,14 @@
   margin: auto;
 }
 
+.tweet-error {
+  float: left;
+  font-size: 12px;
+  padding-left: 8px;
+  color: red;
+  opacity: 0;
+}
+
 .profile-photo {
   border-radius: 6px;
   height: 50px;

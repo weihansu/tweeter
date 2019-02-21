@@ -35,7 +35,7 @@ body {
 .container {
   background-color: #fff;
   width: 450px;
-  height: 600px;
+  height: 100%;
   padding: 2em;
   overflow: auto;
   text-align: center;
