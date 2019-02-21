@@ -17,17 +17,19 @@ function diffDate(tweetDate) {
   } else {
     return `${diffMinutes} minutes ago`;
   }
-
-
-  // return `${diff} days ago`;
-
 };
+
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 
 function renderTweets(tweets) {
   tweets.forEach( function(elm) {
-    let post = createTweetElement(elm);
-    $('.new-tweet').after(post)
+    let tweet = createTweetElement(elm);
+    $('.new-tweet').after(tweet)
   });
 }
 
@@ -54,54 +56,44 @@ function createTweetElement(elm) {
   return tweet;
 }
 
-function loadTweets() {
-  const result = []
-  const $form = $('.tweet-form');
-  $form.submit(function(){
-    $.ajax('/tweets', {method: 'GET', dataType: 'json'})
-    .then(function(res) {
-      renderTweets(res)
-    })
-
-  })
-}
-
-function escape(str) {
-  var div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}
-
-
+// RUN JQUERY AFTER DOCUMENT READY
 $(document).ready(function() {
-  // loadTweets()
-  // renderTweets(datas);
+
+  // load olds tweets
   $.ajax('/tweets', {method: 'GET', dataType: 'json'})
     .then(function(res) {
+      console.log(typeof res);
+      console.log(typeof res[res.length - 1])
       renderTweets(res)
     })
 
+// POST > new tweets and update tweets
   $( ".tweet-form" ).submit(function( event ) {
     event.preventDefault();
     let tweet = $(this).serialize()
     let val = tweet.split('=').slice(1).join('');
     if (val.length <= 140 && val) {
       $('.tweet-error').css('opacity', 0)
-      $.post( "/tweets", tweet, function( data ) {
-        loadTweets()
-        // renderTweets(data);
-        // console.log(data)
-      });
+
+      $.ajax({
+          url: '/tweets',
+          type: 'post',
+          data: tweet,
+          success: function(){
+            $.ajax('/tweets', {method: 'GET', dataType: 'json'})
+              .then(function(res) {
+                let lastTweet = []
+                lastTweet.push(res[res.length - 1]);
+                renderTweets(lastTweet)
+              })
+          }
+      })
     } else if (val.length > 140) {
-      // alert('Your tweets has more than 140 characters!')
       $('.tweet-error').text('Your tweets has more than 140 characters!')
       $('.tweet-error').css('opacity', 1)
-
     } else {
-      // alert('Enter a valid tweet')
       $('.tweet-error').text('Enter a valid tweet')
       $('.tweet-error').css('opacity', 1)
     }
-
   });
 })
