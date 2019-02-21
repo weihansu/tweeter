@@ -4,6 +4,26 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+function diffDate(tweetDate) {
+  let now = new Date();
+  let diffDays = Math.floor((now - tweetDate) / (1000*60*60*24));
+  let diffHours = Math.floor((now - tweetDate) / (1000*60*60));
+  let diffMinutes = Math.floor((now - tweetDate) / (1000*60));
+
+  if (diffDays > 0) {
+    return `${diffDays} days ago`;
+  } else if (diffDays === 0 && diffHours > 0) {
+    return `${diffHours} hours ago`;
+  } else {
+    return `${diffMinutes} minutes ago`;
+  }
+
+
+  // return `${diff} days ago`;
+
+};
+
+
 function renderTweets(tweets) {
   tweets.forEach( function(elm) {
     let post = createTweetElement(elm);
@@ -26,7 +46,7 @@ function createTweetElement(elm) {
           </div>
           <div>
             <footer class="tweeted-footer">
-              <span>${elm['created_at']}</span>
+              <span>${diffDate(elm['created_at'])}</span>
             </footer>
           </div>
         </article>
