@@ -5,6 +5,7 @@
   height: 170px;
   padding: 0 0.5em;
   margin: 10px 0;
+  display: block;
 }
 
 .tweet-heading {
@@ -34,7 +35,6 @@
   border: 1px solid grey;
   border-radius: 6px;
   height: 170px;
-  /*padding: 0 0.5em;*/
   margin: 10px 0;
 }
 
@@ -91,4 +91,23 @@
   font-size: 0.75em;
   float: left;
   padding: 0.5em;
+}
+
+.toggle {
+  display: inline;
+  float: right;
+  height: 100%;
+  text-align: center;
+}
+
+.button-compose {
+  display: block;
+  margin: auto;
+  position: relative;
+  top: 30%;
+  height: 50px;
+  width: 120px;
+  background-color: #fffff;
+  border: 1px solid  black;
+  border-radius: 6px;
 }

@@ -30,4 +30,21 @@ $(document).ready(function() {
   $('.tweeted').mouseout(function(e){
     $(this).css('opacity', 0.75);
   })
+
+  $('.button-compose').mouseover(function(e){
+    $(this).css('opacity', 0.6);
+  })
+  $('.button-compose').mouseout(function(e){
+    $(this).css('opacity', 1);
+  })
+
+  $('.button-compose').click(function(){
+    if($(this).attr('data-click-state') == 1) {
+      $(this).attr('data-click-state', 0)
+      $('.new-tweet').css({'opacity': 1, 'display': 'block'})
+      } else {
+      $(this).attr('data-click-state', 1)
+      $('.new-tweet').css({'display': 'none', 'transition': 'opacity 1s ease-out', 'opacity': 0})
+  }
+  });
 });
