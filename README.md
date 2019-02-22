@@ -6,9 +6,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 - Screenshot of main page
+
 !["Screenshot of main page"](./public/images/index-read-only.png)
 
 - Screenshot of main page with compose option
+
 !["Screenshot of main page with compose option"](./public/images/index-compose-tweets.png)
 
 ## Getting Started
