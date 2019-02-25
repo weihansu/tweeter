@@ -3,10 +3,10 @@
   border: 1px solid grey;
   border-radius: 6px;
   height: 170px;
+  width: 100%;
   padding: 0 0.5em;
   margin: 10px 0;
   display: none;
-  opacity: 0;
 }
 
 .tweet-heading {
@@ -19,7 +19,6 @@
   width: 100%;
   margin: 0.45em 0;
   padding: 0.4em;
-  /*margin: center;*/
 }
 
 .tweet-form-input {
@@ -113,7 +112,7 @@
   display: block;
   margin: auto;
   position: relative;
-  top: 20%;
+  top: 30%;
   height: 50px;
   width: 120px;
   background-color: #fffff;
