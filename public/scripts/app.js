@@ -62,8 +62,6 @@ $(document).ready(function() {
   // load olds tweets
   $.ajax('/tweets', {method: 'GET', dataType: 'json'})
     .then(function(res) {
-      console.log(typeof res);
-      console.log(typeof res[res.length - 1])
       renderTweets(res)
     })
 
