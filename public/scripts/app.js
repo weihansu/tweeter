@@ -5,18 +5,7 @@
  */
 
 function diffDate(tweetDate) {
-  let now = new Date();
-  let diffDays = Math.floor((now - tweetDate) / (1000*60*60*24));
-  let diffHours = Math.floor((now - tweetDate) / (1000*60*60));
-  let diffMinutes = Math.floor((now - tweetDate) / (1000*60));
-
-  if (diffDays > 0) {
-    return `${diffDays} days ago`;
-  } else if (diffDays === 0 && diffHours > 0) {
-    return `${diffHours} hours ago`;
-  } else {
-    return `${diffMinutes} minutes ago`;
-  }
+  return (moment(parseInt(tweetDate)).fromNow());
 };
 
 function escape(str) {
