@@ -7,6 +7,7 @@
   padding: 0 0.5em;
   margin: 10px 0;
   display: none;
+  opacity: 0.5;
 }
 
 .tweet-heading {
@@ -23,7 +24,6 @@
 
 .tweet-form-input {
   float: left;
-
 }
 
 .counter {
@@ -31,26 +31,25 @@
 }
 
 .tweeted {
-  background-color: #fff;
   border: 1px solid grey;
   border-radius: 6px;
   height: 170px;
   margin: 10px 0;
+  opacity: 0.5;
 }
 
 .tweeted-head {
   height: 70px;
   width: 100%;
   padding: 0.5em;
-  background-color: #f3f3f3;
   border-radius: 6px;
 }
 
 .tweeted-heading-right {
   float: right;
 }
+
 .tweeted-heading{
-  display: inline;
   float: left;
   margin: auto;
 }
@@ -68,10 +67,6 @@
   height: 50px;
   width: 50px;
   margin-right: 5px;
-}
-
-.tweeted {
-  opacity: 0.75;
 }
 
 .tweeted-msg {
@@ -93,7 +88,6 @@
 
 .tweeted-footer {
   margin: auto;
-
 }
 .tweeted-footer > span {
   font-size: 0.75em;
@@ -102,20 +96,17 @@
 }
 
 .toggle {
-  display: inline;
   float: right;
   height: 100%;
   text-align: center;
 }
 
 .button-compose {
-  display: block;
   margin: auto;
   position: relative;
   top: 30%;
   height: 50px;
   width: 120px;
-  background-color: #fffff;
   border: 1px solid  black;
   border-radius: 6px;
 }
