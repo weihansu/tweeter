@@ -19,7 +19,13 @@ function escape(str) {
 function renderTweets(tweets) {
   tweets.forEach( function(tweetObj) {
     let tweet = createTweetElement(tweetObj);
-    $('.new-tweet').after(tweet)
+    $('.new-tweet').after(tweet);
+    $('.tweeted').on('mouseover' , function(e){
+      $(this).css('opacity', 1);
+    });
+    $('.tweeted').on('mouseout' , function(e){
+      $(this).css('opacity', 0.5);
+    });
   });
 }
 
@@ -53,7 +59,7 @@ $(document).ready(function() {
   $.ajax('/tweets', {method: 'GET', dataType: 'json'})
     .then(function(res) {
       renderTweets(res)
-    })
+    });
 
 // POST > new tweets and update tweets
   $( ".tweet-form" ).submit(function( event ) {

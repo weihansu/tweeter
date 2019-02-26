@@ -23,14 +23,6 @@ $(document).ready(function() {
     $(this).css('opacity', 0.5);
   });
 
-  // $('.tweeted').on('mouseover' , function(e){
-  //   $(this).css('opacity', 1);
-  // });
-
-  // $('.tweeted').on('mouseout' , function(e){
-  //   $(this).css('opacity', 0.5);
-  // });
-
 // add opacity in button-compose class with mouseover and mouseout
   $('.button-compose').mouseover(function(e){
     $(this).css('opacity', 0.6);
