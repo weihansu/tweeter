@@ -6,6 +6,7 @@ $(document).ready(function() {
   $('textarea').keyup(function(e){
     let inTextArea = $(this).val().length;
     let keyCode = e.keyCode;
+    $('.tweet-error').text('');
 
     if (counter - inTextArea < 0) {
       $('.counter').css('color', 'red');

@@ -9,6 +9,17 @@ function diffDate(tweetDate) {
   return (moment(parseInt(tweetDate)).fromNow());
 };
 
+// functin to validade spaces
+function valSpaces(val) {
+  let testStr = val.match(/[A-Za-z0-9-]/g);
+
+  if(testStr) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 // function to escape unsafe tweets
 function escape(str) {
   var div = document.createElement('div');
@@ -70,7 +81,6 @@ function createTweetElement(tweetObj) {
 
 // RUN JQUERY AFTER DOCUMENT READY
 $(document).ready(function() {
-  console.log('READY')
 
 // load olds tweets
   $.ajax('/tweets', {method: 'GET', dataType: 'json'})
@@ -82,10 +92,9 @@ $(document).ready(function() {
   $( ".tweet-form" ).submit(function( event ) {
     event.preventDefault();
     let tweet = $(this).serialize()
-    // console.log(tweet)
     let val = tweet.split('=').slice(1).join('');
-    console.log(val)
-    if (val.length <= 140 && val && val !== /[+]/) {
+
+    if (val.length <= 140 && val && valSpaces(val)) {
       $('.tweet-error').css('opacity', 0);
       $('textarea').val('');
       $(".counter").text('140');
