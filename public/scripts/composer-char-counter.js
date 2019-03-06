@@ -35,4 +35,5 @@ $(document).ready(function() {
   $('.button-compose').click(function(){
     $('.new-tweet').slideToggle('slow', 'linear');
   });
+
 });

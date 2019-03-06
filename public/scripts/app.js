@@ -20,11 +20,24 @@ function renderTweets(tweets) {
   tweets.forEach( function(tweetObj) {
     let tweet = createTweetElement(tweetObj);
     $('.new-tweet').after(tweet);
+
+    // add opacity when mouseover
     $('.tweeted').on('mouseover' , function(e){
       $(this).css('opacity', 1);
     });
     $('.tweeted').on('mouseout' , function(e){
       $(this).css('opacity', 0.5);
+    });
+
+    // when click in icons' rules
+    $('.icon-flag').on('click' , function(e){
+      $(this).css('opacity', 1);
+    });
+    $('.icon-like').on('click' , function(e){
+      $(this).css('opacity', 1);
+    });
+    $('.icon-retwitte').on('click' , function(e){
+      $(this).css('opacity', 1);
     });
   });
 }
@@ -45,6 +58,9 @@ function createTweetElement(tweetObj) {
           <div>
             <footer class="tweeted-footer">
               <span>${diffDate(tweetObj['created_at'])}</span>
+              <img class="img-compose-icon icon-like" src="/images/like.svg">
+              <img class="img-compose-icon icon-retwitte" src="/images/retwitte.svg">
+              <img class="img-compose-icon icon-flag" src="/images/other.svg">
             </footer>
           </div>
         </article>
@@ -54,6 +70,7 @@ function createTweetElement(tweetObj) {
 
 // RUN JQUERY AFTER DOCUMENT READY
 $(document).ready(function() {
+  console.log('READY')
 
 // load olds tweets
   $.ajax('/tweets', {method: 'GET', dataType: 'json'})
@@ -65,9 +82,13 @@ $(document).ready(function() {
   $( ".tweet-form" ).submit(function( event ) {
     event.preventDefault();
     let tweet = $(this).serialize()
+    // console.log(tweet)
     let val = tweet.split('=').slice(1).join('');
-    if (val.length <= 140 && val) {
-      $('.tweet-error').css('opacity', 0)
+    console.log(val)
+    if (val.length <= 140 && val && val !== /[+]/) {
+      $('.tweet-error').css('opacity', 0);
+      $('textarea').val('');
+      $(".counter").text('140');
 
       $.ajax({
           url: '/tweets',

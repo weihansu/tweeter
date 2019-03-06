@@ -2,7 +2,7 @@
   background-color: #f2f2f2;
   border: 1px solid grey;
   border-radius: 6px;
-  height: 170px;
+  height: 200px;
   width: 100%;
   padding: 0 0.5em;
   margin: 10px 0;
@@ -17,6 +17,7 @@
 
 .tweet-form-text {
   display: block;
+  height: 90px;
   width: 100%;
   margin: 0.45em 0;
   padding: 0.4em;
@@ -110,3 +111,11 @@
   border: 1px solid  black;
   border-radius: 6px;
 }
+
+.img-compose-icon {
+  height: 30px;
+  width: 30px;
+  float: right;
+  opacity: 0.3;
+}
+
